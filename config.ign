@@ -60,16 +60,6 @@
         },
         "mode": 420
       }
-    ],
-    "links": [
-      {
-        "group": {},
-        "overwrite": true,
-        "path": "/usr/bin/vim",
-        "user": {},
-        "hard": false,
-        "target": "/usr/bin/vi"
-      }
     ]
   },
   "systemd": {}

@@ -26,8 +26,3 @@ storage:
         id: 0 
       group:
         id: 0
-  links:
-    - path: /usr/bin/vim
-      overwrite: true
-      target: /usr/bin/vi
-      hard: false
