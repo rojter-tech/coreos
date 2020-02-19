@@ -26,3 +26,21 @@ storage:
         id: 0 
       group:
         id: 0
+  links:
+    - path: /usr/bin/vim
+      overwrite: true
+      target: /usr/bin/vi
+      hard: false
+  disks:
+  - device: /dev/disk/by-uuid/1d960f41-b64f-4b3c-b1ae-8f3a74627035
+    wipe_table: true
+    partitions:
+    - label: "dockerdata" 
+      number: 1 
+      size_mib: 32768
+      start_mib: 0
+  filesystems:
+    - path: /var/dockerdata
+      device: /dev/disk/by-uuid/1d960f41-b64f-4b3c-b1ae-8f3a74627035
+      format: ext4
+      label: DOCKER

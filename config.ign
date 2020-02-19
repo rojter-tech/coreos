@@ -44,6 +44,20 @@
         "mode": 493
       }
     ],
+    "disks": [
+      {
+        "device": "/dev/disk/by-uuid/1d960f41-b64f-4b3c-b1ae-8f3a74627035",
+        "partitions": [
+          {
+            "label": "dockerdata",
+            "number": 1,
+            "sizeMiB": 32768,
+            "startMiB": 0
+          }
+        ],
+        "wipeTable": true
+      }
+    ],
     "files": [
       {
         "group": {
@@ -59,6 +73,24 @@
           "verification": {}
         },
         "mode": 420
+      }
+    ],
+    "filesystems": [
+      {
+        "device": "/dev/disk/by-uuid/1d960f41-b64f-4b3c-b1ae-8f3a74627035",
+        "format": "ext4",
+        "label": "DOCKER",
+        "path": "/var/dockerdata"
+      }
+    ],
+    "links": [
+      {
+        "group": {},
+        "overwrite": true,
+        "path": "/usr/bin/vim",
+        "user": {},
+        "hard": false,
+        "target": "/usr/bin/vi"
       }
     ]
   },
