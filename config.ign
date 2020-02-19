@@ -35,15 +35,6 @@
     ]
   },
   "storage": {
-    "directories": [
-      {
-        "group": {},
-        "overwrite": true,
-        "path": "/var/dockerdata",
-        "user": {},
-        "mode": 493
-      }
-    ],
     "files": [
       {
         "group": {
