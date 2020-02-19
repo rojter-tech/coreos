@@ -15,6 +15,10 @@
   "passwd": {
     "users": [
       {
+        "groups": [
+          "sudo",
+          "docker"
+        ],
         "name": "core",
         "passwordHash": "$1$q5Qhb4ey$Jdql2gjASzQhku90Z8lwd1",
         "sshAuthorizedKeys": [
@@ -35,7 +39,31 @@
     ]
   },
   "storage": {
+    "directories": [
+      {
+        "group": {},
+        "overwrite": true,
+        "path": "/etc/systemd/system/docker.service.d",
+        "user": {},
+        "mode": 493
+      }
+    ],
     "files": [
+      {
+        "group": {
+          "id": 0
+        },
+        "overwrite": true,
+        "path": "/etc/systemd/system/docker.service.d/options.conf",
+        "user": {
+          "id": 0
+        },
+        "contents": {
+          "source": "data:,%5BService%5D%0AExecStart%3D%0AExecStart%3D%2Fusr%2Fbin%2Fdockerd%20-H%20unix%3A%2F%2F%20-H%20tcp%3A%2F%2F0.0.0.0%3A2375%0A",
+          "verification": {}
+        },
+        "mode": 420
+      },
       {
         "group": {
           "id": 0
@@ -46,20 +74,57 @@
           "id": 0
         },
         "contents": {
-          "source": "data:,core",
+          "source": "data:,coremanager",
+          "verification": {}
+        },
+        "mode": 420
+      },
+      {
+        "group": {
+          "id": 0
+        },
+        "overwrite": true,
+        "path": "/etc/fstab",
+        "user": {
+          "id": 0
+        },
+        "contents": {
+          "source": "data:,%2Fdev%2Fmd%2Fdockerdata%20%20%20%20%2Fvar%2Fdockerdata%20%20%20%20ext4%20%20%20%20rw%2Crelatime%20%20%20%200%202",
+          "verification": {}
+        },
+        "mode": 420
+      },
+      {
+        "group": {
+          "id": 0
+        },
+        "overwrite": true,
+        "path": "/etc/sysconfig/docker",
+        "user": {
+          "id": 0
+        },
+        "contents": {
+          "source": "data:,%23%20Modify%20these%20options%20if%20you%20want%20to%20change%20the%20way%20the%20docker%20daemon%20runs%0AOPTIONS%3D%22--selinux-enabled%20%5C%0A--log-driver%3Djournald%20%5C%0A--default-ulimit%20nofile%3D1024%3A1024%20%5C%0A--init-path%20%2Fusr%2Flibexec%2Fdocker%2Fdocker-init%20%5C%0A--userland-proxy-path%20%2Fusr%2Flibexec%2Fdocker%2Fdocker-proxy%20%5C%0A%22%0A",
           "verification": {}
         },
         "mode": 420
       }
     ],
-    "links": [
+    "filesystems": [
       {
-        "group": {},
-        "overwrite": true,
-        "path": "/usr/bin/vim",
-        "user": {},
-        "hard": false,
-        "target": "/usr/bin/vi"
+        "device": "/dev/md/dockerdata",
+        "format": "ext4",
+        "label": "DOCKER",
+        "path": "/var/dockerdata"
+      }
+    ],
+    "raid": [
+      {
+        "devices": [
+          "/dev/disk/by-uuid/6879686c-f1df-46b3-81d8-2f52f7e01c06"
+        ],
+        "level": "raid1",
+        "name": "dockerdata"
       }
     ]
   },
