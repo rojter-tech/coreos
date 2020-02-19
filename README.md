@@ -1,0 +1,2 @@
+# coreos
+configuration setup ingition
