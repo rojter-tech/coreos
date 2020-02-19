@@ -46,7 +46,7 @@
     ],
     "disks": [
       {
-        "device": "/dev/disk/by-uuid/1d960f41-b64f-4b3c-b1ae-8f3a74627035",
+        "device": "/dev/disk/by-uuid/6879686c-f1df-46b3-81d8-2f52f7e01c06",
         "partitions": [
           {
             "label": "dockerdata",
@@ -77,7 +77,7 @@
     ],
     "filesystems": [
       {
-        "device": "/dev/disk/by-uuid/1d960f41-b64f-4b3c-b1ae-8f3a74627035",
+        "device": "/dev/disk/by-uuid/6879686c-f1df-46b3-81d8-2f52f7e01c06",
         "format": "ext4",
         "label": "DOCKER",
         "path": "/var/dockerdata"
