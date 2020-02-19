@@ -27,6 +27,24 @@
       }
     ]
   },
-  "storage": {},
+  "storage": {
+    "files": [
+      {
+        "group": {
+          "id": 0
+        },
+        "overwrite": true,
+        "path": "/etc/hostname",
+        "user": {
+          "id": 0
+        },
+        "contents": {
+          "source": "data:,core",
+          "verification": {}
+        },
+        "mode": 420
+      }
+    ]
+  },
   "systemd": {}
 }
